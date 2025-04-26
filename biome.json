@@ -1,7 +1,10 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": false },
-	"files": { "ignoreUnknown": false, "ignore": [".vinxi", "routeTree.gen.ts", ".output"] },
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [".vinxi", "routeTree.gen.ts", ".output"]
+	},
 	"formatter": { "enabled": true, "indentStyle": "tab" },
 	"organizeImports": { "enabled": true },
 	"linter": {
