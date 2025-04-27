@@ -1,3 +1,4 @@
+import appCss from "@/master.css?url";
 import {
 	HeadContent,
 	Outlet,
@@ -19,6 +20,12 @@ export const Route = createRootRoute({
 			},
 			{
 				title: "TanStack Start Starter",
+			},
+		],
+		links: [
+			{
+				rel: "stylesheet",
+				href: appCss,
 			},
 		],
 	}),

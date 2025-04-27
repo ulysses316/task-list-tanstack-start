@@ -6,17 +6,20 @@
 	"scripts": {
 		"dev": "vinxi dev",
 		"build": "vinxi build",
-		"start": "vinxi start"
+		"start": "vinxi start",
+		"lint": "biome check --fix"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"description": "",
 	"dependencies": {
+		"@tailwindcss/vite": "^4.1.4",
 		"@tanstack/react-router": "^1.117.1",
 		"@tanstack/react-start": "^1.117.2",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
+		"tailwindcss": "^4.1.4",
 		"vinxi": "^0.5.4"
 	},
 	"devDependencies": {

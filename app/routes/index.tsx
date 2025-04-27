@@ -35,6 +35,7 @@ function Home() {
 
 	return (
 		<button
+			className="text-blue-500"
 			type="button"
 			onClick={() => {
 				updateCount({ data: 1 }).then(() => {
