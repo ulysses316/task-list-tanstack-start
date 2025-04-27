@@ -1,13 +1,17 @@
+import {
+	type Theme,
+	ThemeProvider,
+	useTheme,
+} from "@/components/ThemeProvider";
 import appCss from "@/master.css?url";
+import { getThemeServerFn } from "@/utils/lib/ThemeProvider";
 import {
 	HeadContent,
 	Outlet,
 	Scripts,
 	createRootRoute,
 } from "@tanstack/react-router";
-// app/routes/__root.tsx
 import type { ReactNode } from "react";
-
 export const Route = createRootRoute({
 	head: () => ({
 		meta: [
@@ -30,19 +34,26 @@ export const Route = createRootRoute({
 		],
 	}),
 	component: RootComponent,
+	notFoundComponent: () => <div>Not Found</div>,
+	errorComponent: () => <div>Error</div>,
+	loader: () => getThemeServerFn(),
 });
 
 function RootComponent() {
+	const data = Route.useLoaderData();
 	return (
-		<RootDocument>
-			<Outlet />
-		</RootDocument>
+		<ThemeProvider theme={data}>
+			<RootDocument>
+				<Outlet />
+			</RootDocument>
+		</ThemeProvider>
 	);
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+	const { theme } = useTheme();
 	return (
-		<html lang="es">
+		<html lang="es" data-theme={theme} suppressHydrationWarning>
 			<head>
 				<HeadContent />
 			</head>
